@@ -1,0 +1,12 @@
+mixin picture(source, pic)
+  picture(class!=attributes.class)
+    //source(srcset='/assets/img/'+source+pic+'_small.jpg, '+'/assets/img/'+source+pic+'_small_retina.jpg 2x', media='(max-width: 768px)')
+    //source(srcset='/assets/img/'+source+pic+'_def.jpg, '+'/assets/img/'+source+pic+'_def_retina.jpg 2x', media='(min-width: 768px)')
+    img(src=`/assets/img/${source}${pic}.jpg` srcset=`/assets/img/${source}${pic}.jpg 2x`)
+
+mixin svg(data)
+  svg(class!=attributes.class)
+    use(xmlns="http://www.w3.org/2000/svg" xlink:href='/assets/img/sprite.svg#'+data)
+
+mixin cta-btn(data)
+  a(class!=attributes.class, href='http://t.me/sochitransferbot')= data

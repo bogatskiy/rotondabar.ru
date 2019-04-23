@@ -1,0 +1,38 @@
+
+extend ../common/mainLayout
+
+block content
+	.container
+		ul.menu__category-list
+			if menu
+				each category in menu
+					li.menu__category-item
+						h2.menu__category-title= category.section
+						if category.items.length > 0
+							if category.items[0].img
+								img(src='/assets/img/menu/hz/'+category.items[0].img+'_def_retina.jpg').menu__category-img
+						ul.menu__list
+							each i in category.items
+								li.menu__item
+									include blocks/menuItem
+							if user
+								if user.isAdmin
+									li.menu__category-item.menu__category-item--form
+										.menu__form.menu__form--category-item
+											form(method='post' action='/menu/addItem')
+												input(type='hidden' name='_csrf' value= _csrfToken)
+												input(type='hidden' name='id' value= category._id)
+												input(type='text' name='img' placeholder='img')
+												input(type='text' name='title' placeholder='title')
+												input(type='text' name='desc' placeholder='desc')
+												input(type='text' name='weight' placeholder='weight')
+												input(type='number' name='price' placeholder='price')
+												input(type='submit' value='Добавить блюдо').btn
+		if user
+			if user.isAdmin
+				.menu__form
+					form(method='post' action='/menu/addSection')
+						input(type='hidden' name='_csrf' value= _csrfToken)
+						input(type='text' name='section' placeholder='section')
+						input(type='text' name='position' placeholder='position')
+						input(type='submit' value='Добавить категорию').btn

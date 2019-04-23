@@ -1,0 +1,38 @@
+extend ../common/mainLayout
+
+block content
+	.container
+		.menu__edit
+			.menu__edit-item
+				if i.img
+					img(src='/assets/img/menu/hz/'+i.img+'_def_retina.jpg').menu__category-img
+				include blocks/menuItem
+			if user
+				if user.isAdmin
+					.menu__form.menu__form--edit
+						form(method='post' action='/menu/itemEdit')
+							input(type='hidden' name='_csrf' value= _csrfToken)
+							input(type='hidden' name='itemId' value= i._id)
+							label(for=i._id+i.img) Изображение:
+							input(type='text' id=i._id+i.img name='img' value=i.img ? i.img : '')
+							label(for=i._id+i.title) Название:
+							input(type='text' id=i._id+i.title name='title' value=i.title ? i.title : '')
+							label(for=i._id+i.desc) Описание:
+							input(type='textarea' id=i._id+i.desc name='desc' value=i.desc ? i.desc : '')
+							label(for=i._id+i.weight) Выход:
+							input(type='text' id=i._id+i.weight name='weight' value=i.weight ? i.weight : '')
+							label(for=i._id+i.price) Цена:
+							input(type='number' id=i._id+i.price name='price' value=i.price ? i.price : '')
+							input(type='submit' value='Сохранить' hidden='true' id='savebutton')
+						if edit
+							.menu__item-link
+								a(href='/menu')
+									+svg('back').menu__edit-svg.menu__edit-svg--back
+								label(for='savebutton')
+									+svg('refresh').menu__edit-svg.menu__edit-svg--refresh
+								form(method='post' action='/menu/delItem')
+									input(type='hidden' name='_csrf' value= _csrfToken)
+									input(type='hidden' name='_id' value= i._id)
+									input(type='submit' id=i.id + 'btn' hidden='true')
+									label(for=i.id + 'btn')
+										+svg('bin').menu__edit-svg.menu__edit-svg--del

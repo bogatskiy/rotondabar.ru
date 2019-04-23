@@ -1,0 +1,21 @@
+extend common/mainLayout
+
+block content
+	ul.index__news--list
+		each i in news
+			li.index__news--item
+				+picture('index/news/', i.img)
+				p.index__news--desc= i.title
+				p.index__news--date= i.desc
+				p.index__news--date= i.date
+
+	if user
+		form(method='post')
+			h2 news add
+			.status
+				input(type='hidden' name='_csrf' value= _csrfToken)
+				input(type='text' name='title' placeholder='title')
+				input(type='text' name='img' placeholder='img')
+				input(type='date' name='date' placeholder='date')
+				textarea(name='desc' placeholder='desc')
+				input(type='submit' value='news add')

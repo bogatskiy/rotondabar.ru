@@ -1,0 +1,30 @@
+.container {
+  display: inherit;
+  flex-direction: inherit;
+  max-width: 1140px;
+  padding: 0 15px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  align-items: inherit;
+  @include tablet {
+  }
+  @include mobile {
+  }
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.btn {
+  display: flex;
+  text-decoration: none;
+  border-radius: 3px;
+}

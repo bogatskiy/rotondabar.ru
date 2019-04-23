@@ -1,0 +1,161 @@
+.pool {
+  margin: 185px 0 50px;
+  & h1, h2, h3 {
+    font-size: 2.25em;
+    text-align: center;
+  }
+  &__title {
+    margin-bottom: 50px;
+  }
+  &__desc {
+    line-height: 1.2em;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  &__advantages-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 50px 0;
+  }
+  &__advantages-item {
+    display: flex;
+    justify-content: flex-start;
+    width: 60%;
+    padding: 20px 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    align-items: center;
+    & svg {
+      width: 150px;
+    }
+    &:nth-child(odd) {
+      & svg {
+        margin-right: 25px;
+      }
+    }
+    &:nth-child(even) {
+      justify-content: flex-start;
+      flex-direction: row-reverse;
+      background-color: $bgc-2;
+      & svg {
+        margin-left: 25px;
+      }
+    }
+  }
+  &__advantages-item-container {
+    height: 100%;
+    max-width: 70%;
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    & h3 {
+      font-size: 1.5em;
+      text-align: center;
+      margin: 0 0 5px;
+    }
+    & p {
+      width: 70%;
+      text-align: center;
+      font-size: 1em;
+    }
+  }
+  &__rules {
+    margin: 60px auto 0;
+    max-width: 1140px;
+    padding: 0 15px;
+    box-sizing: border-box;
+  }
+  &__rules-title {
+    margin-bottom: 7px;
+  }
+  &__rules-desc {
+    margin-bottom: 50px;
+    padding: 0 20px;
+    line-height: 1.2em;
+    text-align: center;
+  }
+  &__rules-item {
+    padding: 20px 10px;
+
+    &:nth-child(odd) {
+      background-color: $bgc-2;
+    }
+
+    & p {
+      line-height: 1.2em;
+      font-style: italic;
+    }
+  }
+
+  @include mobile() {
+    margin: 100px 0 30px;
+    & h1, h2 {
+      font-size: 1.5em;
+    }
+    &__title {
+      margin-bottom: 15px;
+    }
+    &__desc {
+    }
+    &__advantages-list {
+      margin: 30px 0;
+    }
+    &__advantages-item {
+      flex-direction: column;
+      width: 100%;
+      padding: 10px 15px 15px;
+      & svg {
+        width: 90px;
+        height: 90px;
+        margin-top: 5px;
+        margin-bottom: 12px;
+      }
+      &:nth-child(odd) {
+        & svg {
+          margin-right: 0;
+        }
+      }
+      &:nth-child(even) {
+        flex-direction: column;
+        & svg {
+          margin-left: 0;
+        }
+      }
+    }
+    &__advantages-item-container {
+      height: auto;
+      max-width: 100%;
+      & h3 {
+        margin-bottom: 3px;
+      }
+      & p {
+        width: 100%;
+      }
+    }
+    &__rules {
+      padding: 0;
+      margin: 0;
+    }
+    &__rules-title {
+      padding: 0 15px;
+      margin-bottom: 20px;
+    }
+    &__rules-desc {
+      margin-bottom: 35px;
+      padding: 0 15px;
+      line-height: 1.2em;
+    }
+    &__rules-item {
+      padding: 10px 15px;
+
+      & p {
+        font-size: 0.875em;
+        line-height: 1.3em;
+      }
+    }
+  }
+}

@@ -1,0 +1,360 @@
+.index {
+  &__welcome {
+    color: $fontColor-white;
+    background-color: $bg;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding-bottom: 120px;
+
+    & .container > h1 {
+      margin-bottom: 40px;
+    }
+
+    & .container > p:last-child {
+      font-size: 0.89em;
+      margin-top: 24px;
+      line-height: 1.5em;
+    }
+  }
+
+  &__mountain {
+    height: 340px;
+    background-image: url(/assets/img/index/mountain.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: $sky;
+  }
+
+  &__menu {
+    padding-top: 85px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & h2 {
+      margin-bottom: 45px;
+    }
+
+    & p {
+      font-size: 1em;
+      text-align: center;
+    }
+
+    &-slider {
+      margin-top: 40px;
+      width: 100%;
+    }
+  }
+
+  &__slider {
+
+    &--list {
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 50px;
+    }
+
+    &--item {
+      display: flex;
+      width: 32%;
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      padding-bottom: 21.1%;
+
+      & picture {
+        min-width: 100%;
+        overflow: hidden;
+
+        & img {
+          min-height: 100%;
+        }
+      }
+
+
+      &:nth-child(1) {
+        background-image: url(/assets/img/index/menu/01_small_retina.jpg);
+      }
+
+      &:nth-child(2) {
+        background-image: url(/assets/img/index/menu/02_small_retina.jpg);
+      }
+
+      &:nth-child(3) {
+        background-image: url(/assets/img/index/menu/03_small_retina.jpg);
+      }
+    }
+
+    &--btn {
+      border: 1px solid $sky;
+      margin-top: 30px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.25em;
+      padding: 15px 80px;
+      color: $fontColor;
+      margin-bottom: 50px;
+
+
+    }
+  }
+
+  &__about {
+    padding-top: 75px;
+    padding-bottom: 90px;
+    background-color: $bgc-2;
+
+    &--list {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    &--item {
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+      align-items: flex-start;
+
+      & picture {
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      & p {
+        font-size: 1em;
+        line-height: 1.5em;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      &:nth-child(1) {
+        width: 60%;
+        padding-right: 40px;
+
+        & p {
+          padding-top: 40px;
+          align-self: flex-end;
+          width: 70%;
+          text-align: right;
+        }
+      }
+
+      &:nth-child(2) {
+        max-width: 40%;
+        justify-content: flex-end;
+
+        & h2 {
+          padding-left: 30px;
+        }
+
+        & p {
+          padding: 30px 0 40px;
+        }
+      }
+
+      &:nth-child(3) {
+        padding-top: 30px;
+
+        flex-direction: row;
+        align-items: center;
+
+        & picture {
+          width: 60%;
+        }
+
+        & p {
+          padding-left: 30px;
+          padding-right: 15%;
+          margin-left: auto;
+          max-width: 55%;
+        }
+      }
+
+    }
+  }
+
+  &__news {
+    display: flex;
+    flex-direction: column;
+    padding: 75px 15px 50pt 15px;
+    align-items: center;
+
+    & h2 {
+      margin-bottom: 90px;
+    }
+
+    &--list {
+      width: 100%;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    &--item {
+      width: 31%;
+      background-color: $bgc-2;
+      padding-bottom: 30px;
+    }
+
+    &--desc {
+      font-family: 'Bebas Neue', sans-serif;
+      font-weight: bold;
+      font-size: 1.5em;
+      padding: 25px 0 10px 15px;
+    }
+
+    &--date {
+      padding: 0 0 0 15px;
+    }
+
+    &--btn {
+      margin-top: 60px;
+      padding: 15px 80px;
+      font-family: 'Bebas Neue', sans-serif;
+      border: 1px solid $sky;
+      font-size: 1.1em;
+      color: $fontColor;
+    }
+  }
+
+  @include mobile() {
+    &__welcome {
+      padding-top: 15px;
+      padding-bottom: 70px;
+
+      & .text__desc {
+        font-size: 1em;
+        padding: 0 15px;
+      }
+    }
+    &__mountain {
+      padding-bottom: 45%;
+      height: auto;
+    }
+    &__menu {
+      padding-top: 35px;
+      & h2 {
+        margin-bottom: 10px;
+      }
+    }
+    &__menu-slider {
+      margin-top: 30px;
+    }
+    &__slider--list {
+      flex-direction: column;
+      margin-bottom: 30px;
+    }
+    &__slider--item {
+      padding-bottom: 66.5%;
+      width: 100%;
+
+      &:not(:last-of-type) {
+        margin-bottom: 5px;
+      }
+    }
+    &__slider--btn {
+      padding: 15px 0;
+      width: 100%;
+      text-align: center;
+      display: block;
+    }
+    &__about {
+      padding-top: 40px;
+      padding-bottom: 50px;
+
+      &--list {
+        flex-direction: column;
+      }
+
+      &--item {
+        flex-direction: column;
+        align-content: center;
+
+        &:nth-child(1) {
+          width: 100%;
+          order: 2;
+          padding-right: 0;
+          padding-top: 35px;
+
+          & p {
+            width: 100%;
+            order: 1;
+            text-align: center;
+            padding-top: 0;
+            padding-bottom: 15px;
+          }
+
+          & picture {
+            order: 2;
+          }
+
+        }
+
+        &:nth-child(2) {
+          order: 1;
+          max-width: 100%;
+
+          & h2 {
+            padding: 0;
+            margin: 0 auto;
+          }
+
+          & p {
+            width: 100%;
+            padding-top: 60px;
+            padding-bottom: 35px;
+          }
+
+        }
+
+        &:nth-child(3) {
+          order: 3;
+          width: 100%;
+          flex-direction: column;
+          padding-top: 40px;
+
+          & p {
+            max-width: 100%;
+            padding: 0;
+            order: 1;
+            padding-bottom: 15px;
+          }
+
+          & picture {
+            width: 100%;
+            order: 2;
+          }
+
+        }
+      }
+    }
+    &__news {
+      & h2 {
+        margin-bottom: 45px;
+      }
+      padding-top: 40px;
+      &--list {
+        flex-direction: column;
+      }
+      &--item {
+        width: 100%;
+        padding-bottom: 15px;
+        margin-bottom: 10px;
+
+      }
+      &--btn {
+        padding: 15px 0;
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+      }
+    }
+  }
+}

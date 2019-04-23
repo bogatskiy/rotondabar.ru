@@ -1,0 +1,81 @@
+@import "helpers/*.scss";
+@import "blocks/*.scss";
+
+body {
+  font-family: 'Montserrat', 'Arial', sans-serif;
+  font-size: 16px;
+  color: $fontColor;
+  min-width: 960px;
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  @include tablet {
+    min-width: 769px;
+    max-width: 959px;
+  }
+
+  @include mobile {
+    min-width: 320px;
+    max-width: 768px;
+  }
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3 {
+  margin: 0;
+  font-family: 'Bebas Neue',sans-serif;
+}
+
+.container.info {
+  box-sizing: border-box;
+  color: red;
+  position: relative;
+  margin: 0;
+  padding: 1px;
+  max-width: 100%;
+
+  & p {
+    padding: 300px 0;
+    background-color: #fff;
+  }
+}
+
+.text {
+  &__title {
+    font-size: 2.25em;
+    padding: 15px 0;
+    text-align: center;
+    margin: 0;
+    font-weight: bold;
+    font-family: 'Bebas Neue', sans-serif;
+    & span {
+      font-weight: normal;
+    }
+  }
+
+  &__desc {
+    margin: 0;
+    padding: 5px 0;
+    font-size: 1em;
+    line-height: 1.5em;
+  }
+
+  @include mobile() {
+    &__title {
+      font-size: 1.5em;
+    }
+  }
+}

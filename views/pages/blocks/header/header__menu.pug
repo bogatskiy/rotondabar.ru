@@ -1,0 +1,35 @@
+-
+  var list = [
+  {
+    title: "Главная",
+    href: '/'
+  },
+  {
+  title: "Меню",
+  href: '/menu'
+  },
+  {
+  title: "Бассейн",
+  href: '/pool'
+  },
+  // {
+  // title: "Контакты",
+  // href: '/contact'
+  // }
+  ]
+
+.header__menu
+  ul.header__menu--list
+    each item in list
+      if page === item.title
+        li.header__menu-item
+          a.header__menu--link.active(href=item.href)= item.title
+      else
+        li.header__menu-item
+          a.header__menu--link(href=item.href)= item.title
+    li.header__menu-item.header__menu-item--phone
+      a.header__phone.btn(href='tel:+79189104058')
+          | +7.918.910.40.58
+    //li.header__menu-item(class= 'header__menu-item--'+(user ? 'logout' : 'login'))
+    //  a.header__menu--link(href=(user ? '/logout' : '/login'))
+    //    +svg((user ? `logout` : 'login'))

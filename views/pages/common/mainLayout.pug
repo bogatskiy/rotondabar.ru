@@ -1,0 +1,20 @@
+include ../helpers/mixins
+
+doctype html
+html(lang='ru')
+	head
+		include ../helpers/googleAnalytics
+		include ../helpers/yandexMetrika
+		meta(charset='utf-8')
+		meta(name="viewport", content="width=device-width,initial-scale=1")
+		meta(name='yandex-verification', content='1f424593277d830a')
+		link(rel='stylesheet' href='/assets/css/foundation.css')
+		link(rel='stylesheet' href='assets/css/main.css')
+		script(src='/assets/js/foundation.js' defer)
+		script(src='/assets/js/app.js' defer)
+		title= title
+	body
+		include ../blocks/header/header
+		main(class= className)
+			block content
+		include ../blocks/footer

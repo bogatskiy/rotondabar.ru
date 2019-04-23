@@ -1,0 +1,37 @@
+.parallax {
+  background-color: $sky;
+  width: 100%;
+  &__layers {
+    position:relative;
+    width:100%;
+    padding-bottom: 53%;
+    overflow: hidden;
+  }
+  &__layer {
+    position:absolute;
+    width:101%;
+    left: -1px;
+    bottom: -1px;
+    display: block;
+    transition: all 100ms linear;
+    &--last {
+      bottom: 99%;
+      overflow: hidden;
+      position: absolute;
+      z-index: 500;
+      left: 0;
+      right: 0;
+      & img {
+        width: 101%;
+        margin-left: -5px;
+      }
+
+    }
+  }
+  @include mobile() {
+    &__layers {
+      padding-bottom: 60%;
+    }
+  }
+}
+

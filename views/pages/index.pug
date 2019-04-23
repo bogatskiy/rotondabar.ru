@@ -1,0 +1,59 @@
+extend common/mainLayout
+
+block content
+	.parallax
+		.parallax__layers
+			img.parallax__layer(src='/assets/img/parralax/svg/Layer1.svg' data-depth='0.20')
+			img.parallax__layer(src='/assets/img/parralax/svg/Layer2.svg' data-depth='0.22')
+			img.parallax__layer(src='/assets/img/parralax/svg/Layer3.svg' data-depth='0.25')
+			img.parallax__layer(src='/assets/img/parralax/svg/Layer4.svg' data-depth='0.27')
+			img.parallax__layer(src='/assets/img/parralax/svg/Layer5.svg' data-depth='0.04')
+	.index__welcome
+		.parallax__layer--last
+			img(src='/assets/img/parralax/svg/Layer6.svg')
+		p.text__title «ROTONDA»
+		h1.text__title Кафе-бар у открытого бассейна КО «Беларусь»
+		p.text__desc Непринужденная обстановка, ассортимент блюд
+			br
+			| и напитков, настольные и консольные игры,
+			br
+			| вот далеко не полный список составляющих отдыха в нашем заведении.
+			|
+	.index__mountain
+	.index__menu
+		.container
+			h2.text__title «МЕНЮ»
+			p.text__desc Меню сочетает в себе тщательно отобранные и доведенные до
+				br
+				| превосходного вкуса, блюда европейской,
+				br
+				| американской, азиатской и кавказской кухонь.
+		.index__menu-slider
+			ul.index__slider--list
+				li.index__slider--item
+				li.index__slider--item
+				li.index__slider--item
+		.container
+			p.text__desc Большой, сочный бургер, тигровые креветки в остром соусе,
+				br
+				| фирменные куриные крылья, свежепойманная речная форель,
+				br
+				| стейк из говядины или сочный шашлык
+				br
+				| Каков бы ни был выбор, вы непременно получите удовольствие.
+			a.index__slider--btn.btn(href='/menu') Смотреть все меню
+	.index__about.container
+		ul.index__about--list
+			li.index__about--item
+				+picture('index/about/','02')
+				p А ближе к вечеру гости больше времени уделяют дружеским беседам, за парой-тройкой классических либо авторских коктейлей. Любители консоли состязаются на PS4, а приверженцы живого общения отдают предпочтение настольным играм.
+			li.index__about--item
+				h2.text__title О НАС
+				p Днем у нас можно беззаботно провести время у бассейна на "Dj's Pool Party", c летними коктейлями, освежающими домашними  лимонадами и легкими закусками.
+				+picture('index/about/', '01')
+			li.index__about--item
+				+picture('index/about/','03')
+				p Главная особенность нашего бара - открытый бассейн, комфортная температура воды, которого поддерживается круглый год. Летом это место для спасения от южной жары, а зимой горячая вода бассейна поможет вам расслабиться и согреться после покорения горнолыжных трасс курорта.
+	//include ./blocks/index/indexNews
+
+

@@ -1,0 +1,27 @@
+-
+  var list = [
+  {
+  title: "Главная",
+  href: '/'
+  },
+  {
+  title: "Меню",
+  href: '/menu'
+  },
+  {
+  title: "Бассейн",
+  href: '/pool'
+  },
+  {
+  title: "Контакты",
+  href: '/contact'
+  }
+  ]
+
+header.header.container
+  .header__wrap
+    .header__logo
+      +svg('rotonda')
+    include header__menu
+    .header__menu-btn
+      .header__menu-btn-item

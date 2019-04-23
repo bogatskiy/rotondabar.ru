@@ -1,0 +1,12 @@
+h3.menu__item-name(data-img=i.img)= i.title
+.menu__item-info
+	if i.desc
+		p.menu__item-desc= i.desc
+	if i.price && i.weight
+		p.menu__item-sale= `${i.weight}гр / ${i.price}руб`
+	if user
+		if user.isAdmin
+			if !edit
+				.menu__item-link.menu__item-link--edit
+					a.link(href=`/menu?itemId=${i._id}`)
+						+svg('edit').menu__edit-svg.menu__edit-svg--edit

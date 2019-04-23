@@ -1,0 +1,6 @@
+-var social = {insta: 'https://www.instagram.com/barrotonda',fb: 'https://www.facebook.com/rotonda.kp',trip: 'https://www.tripadvisor.ru/Restaurant_Review-g1746883-d13833770-Reviews-Bar_Rotonda-Krasnaya_Polyana_Adler_District_Sochi_Greater_Sochi_Krasnodar_Krai_.html'}
+ul.social
+  each val, key in social
+    li.social__item
+      a.social__link(href=val,target='_blank')
+        +svg(key)

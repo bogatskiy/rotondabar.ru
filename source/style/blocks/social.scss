@@ -1,0 +1,13 @@
+.social {
+  display: flex;
+  padding: 0;
+  list-style: none;
+  justify-content: space-evenly;
+  margin: 0;
+  width: 100%;
+  & svg {
+    width: 35px;
+    height: 35px;
+    fill: $fontColor-white;
+  }
+}
